@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Michroma&display=swap');
+/* import - команда для внедрения css-стилей которые не присутствуют в VS изначально. В данном случае внедряю в VS шрифт Michroma от Google. */
+
+body{
+background: linear-gradient(180deg, #161616 0%, #363636 100%);
+    /* Взято с Webcode tools>CSS>background gradient */
+    font-family: Michroma, serif;
+}
+/* Кроме Michroma я пременил семейство serif, который будет вместо Михромы, если та не будет отображаться. 
+font-family - примение стиля шрифта и его альтернативы, если основной не сработает.
+ В данном случае основной стиль - Michroma, альтернатива - serif, и так может продолжаться до бесконечности.*/
+
+
+.card>a>img{
+width: 198.67px;
+height: 264.89px;
+}
+
+
+.nav-link, .navbar-brand{
+    color: #ffffff;
+}
+
+.navbar{
+    background-color: rgb(24, 24, 24)!important;
+    border-bottom: 2px solid orange;
+}
+/* Прим: изначально я не мог изменить фон нав. панели из-за того, что в файле bootstrap классу панели был дан высший приоритет (!important),
+ поэтому пришлось здесь перебить приоритет с помощью !important. */
+
+.navbar-nav .nav-link.active{
+    color: rgb(255, 255, 255)!important;
+}
+
+.navbar-brand:hover{
+    color: rgb(153, 199, 239);
+}
+.nav-item:hover{
+    color: rgb(153, 199, 239);
+}
+.nav-link:hover{
+    color: rgb(153, 199, 239);
+}
+
+.navbar-brand img{
+    width: 50px;
+}
+
+.navbar-toggler{
+    background-color: orange;
+}
+
+.card{
+background-color: #000000;
+color: #ffffff;
+}
+/* Цвет фона сайта можно выбрать на сайте Web code tools, нужно нажать CSS Generator>background gradient, создать желаемый цвет и скопировать код цвета к себе.  */
+
+.sidebar{
+    color: rgb(255, 255, 255);
+    background-color: rgb(68, 68, 68);
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: orange;
+    border-radius: 2%;
+}
+/* border-radius - сглаживает углы контейнера, иконки или картинки. Работает только при border-style. */
+
+.card a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.row{
+    justify-content: center;
+
+}
+
+.w-100{
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(68, 68, 68);
+    border-radius: 1%;
+}
+
+.slide-text{
+    color: #ffffff;
+    margin: auto auto;
+    width: 40%;
+}
+/* Два auto подряд отцентруют контент по горизонтали и по вертикали внутри родительского контейнера */
+
+.content-box{
+    background-color: rgb(68, 68, 68);
+}
+
+footer{
+background: linear-gradient(0deg, #363636 0%, #363636 100%);
+    font-size: medium;
+    border-top: #000000 solid 1px;
+    color: aliceblue;
+
+}
+/* border-top очерчивает элемент сверху, при этом все параметры рамки(стиль, толщина, цвет) записываются в одну строку через пробел.
+ Аналогично для border-bottom, border-left, border-right. */
+
+
+.media-links{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.yt:hover{
+    animation: myAnim 2s ease 0s 1 normal none;
+
+}
+/* На сайте Webcodetools можно найти заготовку анимации изображений и иконок вместо того, чтобы их писать вручную.
+ Я решил добавить анимацию к иконке ютьуба, чтобы при наведении на нее курсором она двигалась, для этого написан :hover.
+ Если оставить обращение без ховера, то иконку будет колбасить безостановочно.
+ Webcode tools>CSS Generator>Keyframe animation, нужно выбрать понравившуюся анимацию, настроить ее длину, задержку и параметры движения.
+ Первый кусок кода CSS переносим внутрь обращения к классу ТОЛЬКО изображения или иконки, второй кусок размещаем снизу обращения,
+ за скобками(можно где угодно, но тогда есть шанс запутаться в коде).
+ myAnim является обращением к анимации(названием). Если у вас несколько анимаций, то название можно поменять. */
+
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+		transform-origin: center center;
+	}
+	10% {
+		animation-timing-function: ease-in;
+		transform: scale(0.91);
+	}
+	17% {
+		animation-timing-function: ease-out;
+		transform: scale(0.98);
+	}
+	33% {
+		animation-timing-function: ease-in;
+		transform: scale(0.87);
+	}
+	45% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+	}
+}
+
+
+
+@media (min-width:992px){
+
+    .maincard2{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .maincard1{
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .maincard3{
+        display: flex;
+        justify-content: flex-start;    
+    }
+
+    .card{
+        width: 200px;
+        height: 580.490px;
+        }
+
+}
+
+@media (max-width:755px) {
+    .carousel-indicators {
+        display: none;
+    }
+}
+/* На мобильных устройствах слайд-шоу не будет отображаться из-за display:none. */

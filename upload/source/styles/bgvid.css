@@ -1,0 +1,43 @@
+.bgvideo{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+/* vh - единица измерения, чувствительная к изменению высоты окна сайта, например, при 70vh высота элемента будет всегда 70% от высоты окна. */
+
+.bgvideo video{
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 1;
+    border-bottom: 2px solid orange;
+    border-top:2px solid orange ;
+}
+/* Свойства top, bottom, right и left применяются при position. Top - помещает элемент на расстояние от верхнего края в указанную величину. 
+ Left - помещает на указанную величину от левого края, bottom - от нижнего,
+ right - от правого.  */
+ /* object-fit: cover - если видео или изображение не вмещается в контейнер,
+  то при cover его края, которые не помещаются, будут обрезаны, а сам элемент центрован по центру контейнера,
+  внутри которого он находится. При fill элемент растянется и займет собой все пространство контайнера не выходя за его пределы,
+  при contain элемент увеличится насколько возможно сохраняя свои пропорции.  */
+/* z-index - работает при display:flex, позволяет управлять слоями элементов на сайте и их порядком отображения, 
+ в данном случае без z-index "We have been doing professional PC assembly for over 10 years" находится под видео,
+ пременив z-index надпись появилась поверх видео, так как для видео z-index - 1, а для текста - 2. 
+ Текст отображатся выше так как 2>1. z-index - номер слоя элемента, 
+ которой решает в какой последовательности отобразить слой элементов */
+
+  .video-text{
+    color: antiquewhite;
+    margin: auto auto;
+    z-index: 2;
+  }
+
+  .video-text>h1{
+    font-size: xx-large;
+  }
